@@ -1,0 +1,17 @@
+node_modules
+dist
+.idea
+.DS_Store
+yarn-error.log
+.env
+coverage
+.history
+.vscode/
+**/package-lock.json
+artifacts/
+.idea/
+.editorconfig
+.npmrc
+.npmignore
+esm
+lerna-debug.log
