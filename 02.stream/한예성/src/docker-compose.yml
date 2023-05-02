@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "4566:4566" # s3
+    environment:
+      - SERVICES=s3
+    container_name: localstack
+    volumes:
+      - "./localstack-init:/etc/localstack/init/ready.d/"
