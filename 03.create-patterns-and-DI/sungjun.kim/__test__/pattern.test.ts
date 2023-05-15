@@ -1,5 +1,6 @@
 import { Login, LoginType } from '../src/main'
 import { BasicResponse } from '../src/model/common'
+import { Creation } from '../src/model/Creation'
 import { QueryBuilder } from '../src/QueryBuilder'
 
 describe('Creational Pattern', () => {
@@ -45,6 +46,31 @@ describe('Creational Pattern', () => {
 			expect(res.name).toBe('ksj')
 			expect(res.age).toBe(20)
 			expect(res.tel).toBe('01000000000')
+		})
+	})
+
+	describe('Revealing Constructor', () => {
+		it('[Success Loop 5] Calculator', () => {
+			const n = new Creation(10, (success) => success(5))
+			expect(n.Result).toBe(15)
+		})
+
+		it('[Success] Calculator', () => {
+			const n = new Creation(10, (success) => success())
+			expect(n.Result).toBe(11)
+		})
+
+		it('[Success] Calculator', () => {
+			const n = new Creation(10, (success, fail) => {
+				success()
+				fail()
+			})
+			expect(n.Result).toBe(10)
+		})
+
+		it('[Success] Calculator', () => {
+			const n = new Creation(10, (success, fail) => fail())
+			expect(n.Result).toBe(9)
 		})
 	})
 })
