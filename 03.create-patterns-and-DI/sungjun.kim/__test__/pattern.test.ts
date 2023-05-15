@@ -1,7 +1,8 @@
-import { Login, LoginType } from '../src/main'
+import { Login, LoginNew, LoginType } from '../src/main'
 import { BasicResponse } from '../src/model/common'
 import { Creation } from '../src/model/Creation'
 import { QueryBuilder } from '../src/QueryBuilder'
+import { UserRepository } from '../src/Repository/UserRepository'
 
 describe('Creational Pattern', () => {
 	describe('Factory', () => {
@@ -23,7 +24,7 @@ describe('Creational Pattern', () => {
 				.where('u.id = :id', { id: 1 })
 				.andWhere('u.name = :name', { name: 'ksj' })
 				.getQuery()
-			expect(sql).toBe('SELECT * FROM user u WHERE u.id = ? AND u.name = ? --[1,ksj]')
+			expect(sql).toBe('SELECT * FROM user u WHERE u.id = ? AND u.name = ? -- [1,ksj]')
 		})
 
 		it('BasicResponse 1', () => {
@@ -71,6 +72,17 @@ describe('Creational Pattern', () => {
 		it('[Success] Calculator', () => {
 			const n = new Creation(10, (success, fail) => fail())
 			expect(n.Result).toBe(9)
+		})
+	})
+
+	describe('Intergration', () => {
+		it('Login', () => {
+			const userRepository = new UserRepository()
+			new LoginNew(userRepository).getLogin('google', 'ksj', '1234')
+
+			new LoginNew(userRepository).getLogin('kakao', 'akasai', '1234')
+
+			new LoginNew(userRepository).getLogin('naver', 'akasai', '1234')
 		})
 	})
 })

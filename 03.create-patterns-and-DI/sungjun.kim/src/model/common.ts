@@ -1,3 +1,5 @@
+export type Executor = (o?: any) => void
+
 export abstract class BasicLogin {
 	abstract getId(): string
 
@@ -7,6 +9,23 @@ export abstract class BasicLogin {
 		return `${this.getName()}(${this.getId()}) Login Success.`
 	}
 }
+
+export abstract class BasicLoginNew {
+	abstract getInfo(): string
+
+	abstract getName(): string
+
+	abstract maskingPw(): void
+
+	login(date?: string) {
+		return `[System: ${date ?? ''}] ${this.getName()}(${this.getInfo()}) Login Success.`
+	}
+
+	loginFail(count: number) {
+		return `[System: ${new Date().toDateString()}] Login Failed ${count} times. You've got locked.`
+	}
+}
+
 
 export class BasicResponse {
 	id: number

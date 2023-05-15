@@ -1,3 +1,5 @@
+import { Entity } from './Repository/UserEntity'
+
 export class QueryBuilder {
 	private isSelectAll: boolean
 	private selectSql: string
@@ -56,7 +58,21 @@ export class QueryBuilder {
 			this.selectSql = 'SELECT *'
 		}
 
-		const query = `${this.selectSql}${this.fromSql}${this.whereSql} --[${this.parameters}]`
+		const query = `${this.selectSql}${this.fromSql}${this.whereSql} -- [${this.parameters}]`
 		return query.replace(/:\w+/g, '?')
+	}
+
+	getMany() {
+		console.log(`[QueryRunner] ${this.getQuery()}`)
+		return [{}]
+	}
+
+	getOne() {
+		console.log(`[QueryRunner] ${this.getQuery()}`)
+		return {
+			name: 'ksj',
+			level: 99,
+			job: 'Knight'
+		}
 	}
 }
