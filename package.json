@@ -22,12 +22,12 @@
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.16.0",
-    "chance": "^1.1.11",
-    "@types/express": "^4.17.17",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
+    "chance": "^1.1.11",
     "eslint": "^7.30.0",
     "jest": "^29.5.0",
+    "nock": "^13.3.1",
     "prettier": "^2.3.2",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
@@ -55,7 +55,8 @@
     "dist"
   ],
   "dependencies": {
+    "class-transformer": "^0.5.1",
     "express": "^4.18.2",
-    "got": "^12.6.0"
+    "got": "^11.8.2"
   }
 }
