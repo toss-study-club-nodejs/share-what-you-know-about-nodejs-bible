@@ -16,3 +16,6 @@ artifacts/
 esm
 lerna-debug.log
 yarn.lock
+**/*/*.js
+**/*/*.js.map
+**/*/*.d.ts
