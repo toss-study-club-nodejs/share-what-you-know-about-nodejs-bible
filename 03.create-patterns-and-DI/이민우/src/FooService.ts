@@ -1,4 +1,4 @@
-import { WebClientService } from "./web-client/WebClientService";
+import { WebClientService } from "./web-client/creator/WebClientService";
 
 export class FooService {
   constructor(private readonly webClientService: WebClientService) {}

@@ -1,6 +1,6 @@
-import { GotClient } from "../../../src/web-client/http/GotClient";
-import { MediaType } from "../../../src/web-client/http/MediaType";
-import { BodyInserter } from "../../../src/web-client/http/BodyInserter";
+import { GotClient } from "../../src/web-client/GotClient";
+import { MediaType } from "../../src/web-client/http/MediaType";
+import { BodyInserter } from "../../src/web-client/http/BodyInserter";
 import nock from "nock";
 
 describe('GotClient', () => {

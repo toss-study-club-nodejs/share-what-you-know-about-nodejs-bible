@@ -1,4 +1,4 @@
-import { TestWebClientService } from './web-client/TestWebClientService';
+import { TestWebClientService } from './web-client/creator/TestWebClientService';
 import { StubWebClient } from './web-client/StubWebClient';
 import { FooService } from '../src/FooService';
 

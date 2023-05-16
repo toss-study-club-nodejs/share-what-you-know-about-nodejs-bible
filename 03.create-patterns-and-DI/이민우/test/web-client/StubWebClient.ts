@@ -1,5 +1,5 @@
 import { Method } from 'got';
-import { WebClient } from "../../src/web-client/http/WebClient";
+import { WebClient } from "../../src/web-client/WebClient";
 import { BodyInserter } from "../../src/web-client/http/BodyInserter";
 import { ResponseSpec } from "../../src/web-client/http/ResponseSpec";
 import { MediaType } from "../../src/web-client/http/MediaType";

@@ -1,8 +1,8 @@
 import got, { ExtendOptions, Method } from 'got';
 import { WebClient } from "./WebClient";
-import { MediaType } from "./MediaType";
-import { BodyInserter } from "./BodyInserter";
-import { ResponseSpec } from "./ResponseSpec";
+import { MediaType } from "./http/MediaType";
+import { BodyInserter } from "./http/BodyInserter";
+import { ResponseSpec } from "./http/ResponseSpec";
 
 export class GotClient implements WebClient {
   readonly #options: ExtendOptions;
@@ -56,6 +56,8 @@ export class GotClient implements WebClient {
   }
 
   body<T>(body: BodyInserter<T>): this {
+    this.accept(body.mediaType);
+
     switch (body.mediaType) {
       case MediaType.APPLICATION_JSON:
         this.#options.json = body.data as Record<string, unknown>;

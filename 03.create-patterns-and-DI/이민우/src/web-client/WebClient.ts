@@ -1,6 +1,6 @@
-import { MediaType } from "./MediaType";
-import { BodyInserter } from "./BodyInserter";
-import { ResponseSpec } from "./ResponseSpec";
+import { MediaType } from "./http/MediaType";
+import { BodyInserter } from "./http/BodyInserter";
+import { ResponseSpec } from "./http/ResponseSpec";
 
 export interface WebClient {
   get(): this;
