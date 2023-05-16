@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing'
-import { IGithubService } from './github.interface'
-import { GithubTestService } from './github_test.service'
-import { GithubModule } from './github.module'
+import { IGithubService } from '../src/github/github.interface'
+import { GithubTestService } from '../src/github/github_test.service'
+import { GithubModule } from '../src/github/github.module'
 
 describe('GithubService', () => {
 	let githubService: IGithubService
