@@ -81,8 +81,6 @@
     "noImplicitAny": true,
     "strictBindCallApply": true,
     "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "useUnknownInCatchVariables": false,
     "noImplicitOverride": true,
     "strictPropertyInitialization": false,
